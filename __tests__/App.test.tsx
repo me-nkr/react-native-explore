@@ -2,16 +2,20 @@
  * @format
  */
 
-import 'react-native';
 import React from 'react';
-import App from '../App';
+import App from '../src/App';
 
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+import { describe, it, expect } from '@jest/globals';
+import { render, screen } from "@testing-library/react-native";
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+describe("App", () => {
 
-it('renders correctly', () => {
-  renderer.create(<App />);
-});
+  it("should render app with playarea", () => {
+
+    render(<App />);
+
+    const samplePlayArea = screen.getByLabelText("play area");
+
+    expect(samplePlayArea).toBeOnTheScreen();
+  })
+})
