@@ -33,15 +33,11 @@ export const handleEnd: HandleEnd = ([lRow, lCol], victory, setVictory, gameStat
 
     if (lRow === null || lCol === null) return
 
-        console.log("called")
-
     if (!victory) {
 
         const { player } = gameState[lRow][lCol];
 
         const victoryCells = findVictory(3, lRow, lCol, (row, col) => gameState[row][col].player !== player);
-
-        console.log(victoryCells)
 
         if (victoryCells) {
             setVictory(true);

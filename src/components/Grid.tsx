@@ -14,8 +14,6 @@ const Grid: React.FC<GridProps> = ({ borders = false, cellPressHandler, gameStat
 
     const { height, width } = useWindowDimensions();
 
-    // console.log(height, width)
-
     const size = gameState.length;
 
     const grid = [];
